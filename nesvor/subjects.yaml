@@ -21,9 +21,4 @@ subjects:
         - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00902XX11_ses-6831_run-12_T2w/sub-CC00902XX11_ses-6831_run-12_T2w.nii.gz
         - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00902XX11_ses-6831_run-13_T2w/sub-CC00902XX11_ses-6831_run-13_T2w.nii.gz
   
-  # sub-0829:
-  #   ses-1001:
-  #     stacks:
-  #       - "/path/to/stack1.nii.gz"
-  #     masks:
-  #       - "/path/to/mask1.nii.gz"
+ 
