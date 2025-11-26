@@ -14,11 +14,11 @@ subjects:
         - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00902XX11/ses-6831/anat/sub-CC00902XX11_ses-6831_run-13_T2w.nii.gz
 
       masks:
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00902XX11_ses-6831_run-08_T2w/sub-CC00902XX11_ses-6831_run-08_T2w.nii.gz
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00902XX11_ses-6831_run-09_T2w/sub-CC00902XX11_ses-6831_run-09_T2w.nii.gz
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00902XX11_ses-6831_run-10_T2w/sub-CC00902XX11_ses-6831_run-10_T2w.nii.gz
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00902XX11_ses-6831_run-11_T2w/sub-CC00902XX11_ses-6831_run-11_T2w.nii.gz
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00902XX11_ses-6831_run-12_T2w/sub-CC00902XX11_ses-6831_run-12_T2w.nii.gz
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00902XX11_ses-6831_run-13_T2w/sub-CC00902XX11_ses-6831_run-13_T2w.nii.gz
+        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00902XX11_ses-6831_run-08_T2w/sub-CC00902XX11_ses-6831_run-08_T2w_mask.nii.gz
+        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00902XX11_ses-6831_run-09_T2w/sub-CC00902XX11_ses-6831_run-09_T2w_mask.nii.gz
+        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00902XX11_ses-6831_run-10_T2w/sub-CC00902XX11_ses-6831_run-10_T2w_mask.nii.gz
+        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00902XX11_ses-6831_run-11_T2w/sub-CC00902XX11_ses-6831_run-11_T2w_mask.nii.gz
+        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00902XX11_ses-6831_run-12_T2w/sub-CC00902XX11_ses-6831_run-12_T2w_mask.nii.gz
+        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00902XX11_ses-6831_run-13_T2w/sub-CC00902XX11_ses-6831_run-13_T2w_mask.nii.gz
   
  
