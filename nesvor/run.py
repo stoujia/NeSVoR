@@ -22,7 +22,7 @@ except ImportError as e:
 
 # --- PATH CONFIGURATION (ADAPTED TO YOUR COMMAND) ---
 # 1. Where your raw data lives on the HOST (The folder containing rawdata_bids and derivatives)
-HOST_INPUT_ROOT = "/home/INT/jia.s/Documents/PhD/Donnees/MarsFet"
+HOST_INPUT_ROOT = ""
 DOCKER_INPUT_MOUNT = "/incoming"
 
 # 2. The Docker Output Mount Point (Fixed internal path)
