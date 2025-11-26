@@ -81,6 +81,7 @@ def preprocess_with_docker(sub_id, stacks, masks, output_dir_host):
     ] + docker_masks
 
     print(f"  [Docker] Running SVoRT registration for {sub_id}...")
+    print("Command:", " ".join(cmd))
     try:
         subprocess.run(cmd, check=True)
         print(f"  [Docker] Complete.")
