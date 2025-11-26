@@ -268,13 +268,13 @@ def main():
         # 'n_iter' is defined as 6000 in build_parser_training (for training steps)
         # but as 3 in build_parser_svr (for outer loop iterations).
         # Defaulting to 6000 for standard training compilation.
-        n_iter=100, 
+        n_iter=6000, 
 
         # --- Outputs Sampling ---
         output_resolution=0.5,
         output_intensity_mean=700.0,
         inference_batch_size=2* 4096*2,             # No default set in parser definition
-        n_inference_samples=None,              # No default set in parser definition
+        n_inference_samples=256,              # No default set in parser definition
         output_psf_factor=1.0,
         sample_orientation=None,
         sample_mask=None,
