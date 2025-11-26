@@ -92,7 +92,7 @@ def preprocess_with_docker(sub_id, stacks, masks, output_dir_host):
         print(f"  [Error] Docker failed for {sub_id}: {e}")
         raise e
 
-def process_subject(subject_id, session_id, stacks, masks, output_root, args, already_SVoRT = False):
+def process_subject(subject_id, session_id, stacks, masks, output_root, args, already_SVoRT = False, debug = True):
     print(f"--- Processing Subject: {subject_id} ---")
     
     # Prepare Subject Output Directory
@@ -138,6 +138,10 @@ def process_subject(subject_id, session_id, stacks, masks, output_root, args, al
     # ---------------------------------------------------------
     print("Step 4: Sampling volumes...")
     # volume = sample_volume(model_inr, mask, psf_resolution=args.output_resolution)
+    if debug:
+        print("  [Debug] Sampling with debug mode ON.")
+        print(f"  [Debug] Mask shape: {mask.shape}, dtype: {mask.dtype}")
+
     output_volume, _ = _sample_inr(
             args,
             model_inr,
@@ -267,9 +271,9 @@ def main():
         n_iter=100, 
 
         # --- Outputs Sampling ---
-        output_resolution=0.8,
+        output_resolution=0.5,
         output_intensity_mean=700.0,
-        inference_batch_size=None,             # No default set in parser definition
+        inference_batch_size=2* 4096*2,             # No default set in parser definition
         n_inference_samples=None,              # No default set in parser definition
         output_psf_factor=1.0,
         sample_orientation=None,
