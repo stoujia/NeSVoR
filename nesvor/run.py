@@ -9,16 +9,16 @@ import yaml
 
 
 # --- NeSVoR "Old Version" Imports ---
-try:
-    from image.image import load_slices
-    from inr.train import train
-    from inr.models import NeSVoR
-    # from inr.sample import sample_volume
-    from cli.commands import _sample_inr
-    from inr.data import PointDataset
-except ImportError as e:
-    print("Error importing NeSVoR. Check installation.", e)
-    exit(1)
+# try:
+from image.image import load_slices
+from inr.train import train
+from inr.models import NeSVoR
+# from inr.sample import sample_volume
+from cli.commands import _sample_inr
+from inr.data import PointDataset
+# except ImportError as e:
+#     print("Error importing NeSVoR. Check installation.", e)
+#     exit(1)
 
 # --- PATH CONFIGURATION (ADAPTED TO YOUR COMMAND) ---
 # 1. Where your raw data lives on the HOST (The folder containing rawdata_bids and derivatives)
