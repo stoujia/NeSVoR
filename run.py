@@ -113,7 +113,7 @@ def process_subject(subject_id, session_id, stacks, masks, output_root, args, al
     # 2. Load Slices (Local)
     # ---------------------------------------------------------
     print("Step 2: Loading slices locally...")
-    slices = load_slices(slices_dir)
+    slices = load_slices(slices_dir, device=args.device)
 
     # ---------------------------------------------------------
     # 3. Train NeSVoR Model (Local)
