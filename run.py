@@ -268,7 +268,7 @@ def main():
         # 'n_iter' is defined as 6000 in build_parser_training (for training steps)
         # but as 3 in build_parser_svr (for outer loop iterations).
         # Defaulting to 6000 for standard training compilation.
-        n_iter=6000, 
+        n_iter=100, 
 
         # --- Outputs Sampling ---
         output_resolution=0.5,
