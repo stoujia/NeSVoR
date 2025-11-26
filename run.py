@@ -28,7 +28,7 @@ DOCKER_INPUT_MOUNT = "/incoming"
 
 # 2. The Docker Output Mount Point (Fixed internal path)
 DOCKER_OUTPUT_MOUNT = "/outgoing"
-already_SVoRT = True
+already_SVoRT = False
 
 def path_to_docker_input(host_path):
     """
@@ -268,7 +268,7 @@ def main():
         # 'n_iter' is defined as 6000 in build_parser_training (for training steps)
         # but as 3 in build_parser_svr (for outer loop iterations).
         # Defaulting to 6000 for standard training compilation.
-        n_iter=100, 
+        n_iter=6000, 
 
         # --- Outputs Sampling ---
         output_resolution=0.5,
