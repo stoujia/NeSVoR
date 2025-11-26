@@ -27,6 +27,7 @@ DOCKER_INPUT_MOUNT = "/incoming"
 
 # 2. The Docker Output Mount Point (Fixed internal path)
 DOCKER_OUTPUT_MOUNT = "/outgoing"
+already_SVoRT = True
 
 def path_to_docker_input(host_path):
     """
@@ -90,7 +91,7 @@ def preprocess_with_docker(sub_id, stacks, masks, output_dir_host):
         print(f"  [Error] Docker failed for {sub_id}: {e}")
         raise e
 
-def process_subject(subject_id, session_id, stacks, masks, output_root, args):
+def process_subject(subject_id, session_id, stacks, masks, output_root, args, already_SVoRT = False):
     print(f"--- Processing Subject: {subject_id} ---")
     
     # Prepare Subject Output Directory
@@ -101,7 +102,12 @@ def process_subject(subject_id, session_id, stacks, masks, output_root, args):
     # 1. SVoRT Preprocessing (Docker)
     # ---------------------------------------------------------
     # This will mount the raw data and the specific output folder
-    slices_dir = preprocess_with_docker(subject_id, stacks, masks, subject_out_dir)
+    
+    if already_SVoRT:
+        print("Step 1: Using already SVoRT-processed slices...")
+        slices_dir = os.path.join(output_root, subject_id, "preproc_slices")
+    else:
+        slices_dir = preprocess_with_docker(subject_id, stacks, masks, subject_out_dir)
 
     # ---------------------------------------------------------
     # 2. Load Slices (Local)
@@ -208,6 +214,7 @@ def main():
 # - build_parser_common()
 
     args = SimpleNamespace(
+        dtype = torch.float16
         # --- Model Architecture (Training) ---
         n_features_per_level=2,
         log2_hashmap_size=19,
@@ -307,7 +314,7 @@ def main():
 
             try:
                 # Updated call to include ses_id
-                process_subject(sub_id, ses_id, stacks, masks, session_out_dir, args)
+                process_subject(sub_id, ses_id, stacks, masks, session_out_dir, args, already_SVoRT=already_SVoRT)
             except Exception as e:
                 print(f"FAILED on {sub_id}/{ses_id}: {e}")
                 import traceback
