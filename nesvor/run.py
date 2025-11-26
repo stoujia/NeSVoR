@@ -4,7 +4,7 @@ import subprocess
 import torch
 from argparse import ArgumentParser
 from types import SimpleNamespace
-
+import time
 import yaml
 
 
@@ -89,7 +89,7 @@ def preprocess_with_docker(sub_id, stacks, masks, output_dir_host):
         print(f"  [Error] Docker failed for {sub_id}: {e}")
         raise e
 
-def process_subject(subject_id, stacks, masks, output_root, args):
+def process_subject(subject_id, session_id, stacks, masks, output_root, args):
     print(f"--- Processing Subject: {subject_id} ---")
     
     # Prepare Subject Output Directory
@@ -112,11 +112,18 @@ def process_subject(subject_id, stacks, masks, output_root, args):
     # 3. Train NeSVoR Model (Local)
     # ---------------------------------------------------------
     print("Step 3: Training NeSVoR model...")
-    # To get the boundin box
-    dataset = PointDataset(slices)
-    bb = dataset.bounding_box
+
+    start_time = time.time()  # <--- Start Timer
+
+    # # To get the boundin box
+    # dataset = PointDataset(slices)
+    # bb = dataset.bounding_box
 
     model_inr, output_slices, mask = train(slices, args) #model.inr as an output
+
+    end_time = time.time()    # <--- End Timer
+    training_duration = end_time - start_time
+    print(f"Training Duration: {training_duration:.2f} seconds")
 
     # ---------------------------------------------------------
     # 4. Sample Volume (Local)
@@ -140,7 +147,34 @@ def process_subject(subject_id, stacks, masks, output_root, args):
     output_volume.save_mask(os.path.join(subject_out_dir, "mask.nii.gz"))
     output_volume.save(os.path.join(subject_out_dir, "reconstruction_with_bg.nii.gz"), masked=False) # without the mask
     
-    print(f"Done with {subject_id}")
+    # 6. Save Processing Metadata
+    print("Step 6: Saving Metadata...")
+    metadata = {
+        "subject_id": subject_id,
+        "session_id": session_id,
+        "training_time_seconds": round(training_duration, 2),
+        "training_time_human": time.strftime("%H:%M:%S", time.gmtime(training_duration)),
+        "parameters": {
+            "resolution": args.output_resolution,
+            "iterations": args.n_iter,
+            "batch_size": args.batch_size
+        },
+        "inputs": {
+            "stacks": stacks,
+            "masks": masks
+        }
+    }
+
+    # Save to JSON in the output folder
+    json_path = os.path.join(subject_out_dir, "processing_info.json")
+    with open(json_path, 'w') as f:
+        json.dump(metadata, f, indent=4)
+
+    print(f"Done with {subject_id}. Info saved to {json_path}")
+
+
+
+
 
 def main():
     parser = ArgumentParser()
