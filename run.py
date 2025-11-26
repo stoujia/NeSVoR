@@ -6,6 +6,7 @@ from argparse import ArgumentParser
 from types import SimpleNamespace
 import time
 import yaml
+import json
 
 
 # --- NeSVoR "Old Version" Imports ---
@@ -188,9 +189,9 @@ def main():
     parser.add_argument("--config", type=str, help="Path to YAML config file", default="subjects.yaml")
     
     # Tuning
-    parser.add_argument("--resolution", type=float, default=0.8)
-    parser.add_argument("--iterations", type=int, default=3000)
-    parser.add_argument("--batch_size", type=int, default=1024)
+    parser.add_argument("--resolution", type=float, default=0.5)
+    # parser.add_argument("--iterations", type=int, default=3000)
+    # parser.add_argument("--batch_size", type=int, default=1024)
 
     conf = parser.parse_args()
 
