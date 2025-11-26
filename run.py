@@ -214,7 +214,7 @@ def main():
 # - build_parser_common()
 
     args = SimpleNamespace(
-        dtype = torch.float16
+        dtype = torch.float16,
         # --- Model Architecture (Training) ---
         n_features_per_level=2,
         log2_hashmap_size=19,
