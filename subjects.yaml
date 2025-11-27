@@ -2,78 +2,78 @@
 output_dir: "/envau/work/meca/users/jia.s/GaussianSplatting/NeSVoR_outputs_real"
 
 # Subject Dictionary
-subjects:
-  # Subject 1 (From your example)
-  sub-CC00902XX11:
-    ses-6831:
-      stacks:
-        - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00902XX11/ses-6831/anat/sub-CC00902XX11_ses-6831_run-08_T2w.nii.gz
-        - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00902XX11/ses-6831/anat/sub-CC00902XX11_ses-6831_run-09_T2w.nii.gz
-        - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00902XX11/ses-6831/anat/sub-CC00902XX11_ses-6831_run-10_T2w.nii.gz
-        - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00902XX11/ses-6831/anat/sub-CC00902XX11_ses-6831_run-11_T2w.nii.gz
-        - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00902XX11/ses-6831/anat/sub-CC00902XX11_ses-6831_run-12_T2w.nii.gz
-        - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00902XX11/ses-6831/anat/sub-CC00902XX11_ses-6831_run-13_T2w.nii.gz
-      masks:
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00902XX11_ses-6831_run-08_T2w/sub-CC00902XX11_ses-6831_run-08_T2w_mask.nii.gz
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00902XX11_ses-6831_run-09_T2w/sub-CC00902XX11_ses-6831_run-09_T2w_mask.nii.gz
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00902XX11_ses-6831_run-10_T2w/sub-CC00902XX11_ses-6831_run-10_T2w_mask.nii.gz
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00902XX11_ses-6831_run-11_T2w/sub-CC00902XX11_ses-6831_run-11_T2w_mask.nii.gz
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00902XX11_ses-6831_run-12_T2w/sub-CC00902XX11_ses-6831_run-12_T2w_mask.nii.gz
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00902XX11_ses-6831_run-13_T2w/sub-CC00902XX11_ses-6831_run-13_T2w_mask.nii.gz
+# subjects:
+#   # Subject 1 (From your example)
+#   sub-CC00902XX11:
+#     ses-6831:
+#       stacks:
+#         - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00902XX11/ses-6831/anat/sub-CC00902XX11_ses-6831_run-08_T2w.nii.gz
+#         - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00902XX11/ses-6831/anat/sub-CC00902XX11_ses-6831_run-09_T2w.nii.gz
+#         - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00902XX11/ses-6831/anat/sub-CC00902XX11_ses-6831_run-10_T2w.nii.gz
+#         - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00902XX11/ses-6831/anat/sub-CC00902XX11_ses-6831_run-11_T2w.nii.gz
+#         - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00902XX11/ses-6831/anat/sub-CC00902XX11_ses-6831_run-12_T2w.nii.gz
+#         - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00902XX11/ses-6831/anat/sub-CC00902XX11_ses-6831_run-13_T2w.nii.gz
+#       masks:
+#         - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00902XX11_ses-6831_run-08_T2w/sub-CC00902XX11_ses-6831_run-08_T2w_mask.nii.gz
+#         - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00902XX11_ses-6831_run-09_T2w/sub-CC00902XX11_ses-6831_run-09_T2w_mask.nii.gz
+#         - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00902XX11_ses-6831_run-10_T2w/sub-CC00902XX11_ses-6831_run-10_T2w_mask.nii.gz
+#         - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00902XX11_ses-6831_run-11_T2w/sub-CC00902XX11_ses-6831_run-11_T2w_mask.nii.gz
+#         - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00902XX11_ses-6831_run-12_T2w/sub-CC00902XX11_ses-6831_run-12_T2w_mask.nii.gz
+#         - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00902XX11_ses-6831_run-13_T2w/sub-CC00902XX11_ses-6831_run-13_T2w_mask.nii.gz
 
-  # Subject 2: sub-CC00908XX17 / ses-5131 (Runs 08-13)
-  sub-CC00908XX17:
-    ses-5131:
-      stacks:
-        - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00908XX17/ses-5131/anat/sub-CC00908XX17_ses-5131_run-08_T2w.nii.gz
-        - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00908XX17/ses-5131/anat/sub-CC00908XX17_ses-5131_run-09_T2w.nii.gz
-        - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00908XX17/ses-5131/anat/sub-CC00908XX17_ses-5131_run-10_T2w.nii.gz
-        - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00908XX17/ses-5131/anat/sub-CC00908XX17_ses-5131_run-11_T2w.nii.gz
-        - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00908XX17/ses-5131/anat/sub-CC00908XX17_ses-5131_run-12_T2w.nii.gz
-        - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00908XX17/ses-5131/anat/sub-CC00908XX17_ses-5131_run-13_T2w.nii.gz
-      masks:
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00908XX17_ses-5131_run-08_T2w/sub-CC00908XX17_ses-5131_run-08_T2w_mask.nii.gz
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00908XX17_ses-5131_run-09_T2w/sub-CC00908XX17_ses-5131_run-09_T2w_mask.nii.gz
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00908XX17_ses-5131_run-10_T2w/sub-CC00908XX17_ses-5131_run-10_T2w_mask.nii.gz
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00908XX17_ses-5131_run-11_T2w/sub-CC00908XX17_ses-5131_run-11_T2w_mask.nii.gz
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00908XX17_ses-5131_run-12_T2w/sub-CC00908XX17_ses-5131_run-12_T2w_mask.nii.gz
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00908XX17_ses-5131_run-13_T2w/sub-CC00908XX17_ses-5131_run-13_T2w_mask.nii.gz
+#   # Subject 2: sub-CC00908XX17 / ses-5131 (Runs 08-13)
+#   sub-CC00908XX17:
+#     ses-5131:
+#       stacks:
+#         - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00908XX17/ses-5131/anat/sub-CC00908XX17_ses-5131_run-08_T2w.nii.gz
+#         - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00908XX17/ses-5131/anat/sub-CC00908XX17_ses-5131_run-09_T2w.nii.gz
+#         - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00908XX17/ses-5131/anat/sub-CC00908XX17_ses-5131_run-10_T2w.nii.gz
+#         - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00908XX17/ses-5131/anat/sub-CC00908XX17_ses-5131_run-11_T2w.nii.gz
+#         - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00908XX17/ses-5131/anat/sub-CC00908XX17_ses-5131_run-12_T2w.nii.gz
+#         - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00908XX17/ses-5131/anat/sub-CC00908XX17_ses-5131_run-13_T2w.nii.gz
+#       masks:
+#         - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00908XX17_ses-5131_run-08_T2w/sub-CC00908XX17_ses-5131_run-08_T2w_mask.nii.gz
+#         - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00908XX17_ses-5131_run-09_T2w/sub-CC00908XX17_ses-5131_run-09_T2w_mask.nii.gz
+#         - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00908XX17_ses-5131_run-10_T2w/sub-CC00908XX17_ses-5131_run-10_T2w_mask.nii.gz
+#         - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00908XX17_ses-5131_run-11_T2w/sub-CC00908XX17_ses-5131_run-11_T2w_mask.nii.gz
+#         - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00908XX17_ses-5131_run-12_T2w/sub-CC00908XX17_ses-5131_run-12_T2w_mask.nii.gz
+#         - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00908XX17_ses-5131_run-13_T2w/sub-CC00908XX17_ses-5131_run-13_T2w_mask.nii.gz
 
-  # Subject 3: sub-CC00982XX18 / ses-55730 (Runs 09-14)
-  sub-CC00982XX18:
-    ses-55730:
-      stacks:
-        - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00982XX18/ses-55730/anat/sub-CC00982XX18_ses-55730_run-09_T2w.nii.gz
-        - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00982XX18/ses-55730/anat/sub-CC00982XX18_ses-55730_run-10_T2w.nii.gz
-        - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00982XX18/ses-55730/anat/sub-CC00982XX18_ses-55730_run-11_T2w.nii.gz
-        - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00982XX18/ses-55730/anat/sub-CC00982XX18_ses-55730_run-12_T2w.nii.gz
-        - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00982XX18/ses-55730/anat/sub-CC00982XX18_ses-55730_run-13_T2w.nii.gz
-        - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00982XX18/ses-55730/anat/sub-CC00982XX18_ses-55730_run-14_T2w.nii.gz
-      masks:
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00982XX18_ses-55730_run-09_T2w/sub-CC00982XX18_ses-55730_run-09_T2w_mask.nii.gz
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00982XX18_ses-55730_run-10_T2w/sub-CC00982XX18_ses-55730_run-10_T2w_mask.nii.gz
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00982XX18_ses-55730_run-11_T2w/sub-CC00982XX18_ses-55730_run-11_T2w_mask.nii.gz
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00982XX18_ses-55730_run-12_T2w/sub-CC00982XX18_ses-55730_run-12_T2w_mask.nii.gz
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00982XX18_ses-55730_run-13_T2w/sub-CC00982XX18_ses-55730_run-13_T2w_mask.nii.gz
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00982XX18_ses-55730_run-14_T2w/sub-CC00982XX18_ses-55730_run-14_T2w_mask.nii.gz
+#   # Subject 3: sub-CC00982XX18 / ses-55730 (Runs 09-14)
+#   sub-CC00982XX18:
+#     ses-55730:
+#       stacks:
+#         - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00982XX18/ses-55730/anat/sub-CC00982XX18_ses-55730_run-09_T2w.nii.gz
+#         - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00982XX18/ses-55730/anat/sub-CC00982XX18_ses-55730_run-10_T2w.nii.gz
+#         - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00982XX18/ses-55730/anat/sub-CC00982XX18_ses-55730_run-11_T2w.nii.gz
+#         - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00982XX18/ses-55730/anat/sub-CC00982XX18_ses-55730_run-12_T2w.nii.gz
+#         - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00982XX18/ses-55730/anat/sub-CC00982XX18_ses-55730_run-13_T2w.nii.gz
+#         - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC00982XX18/ses-55730/anat/sub-CC00982XX18_ses-55730_run-14_T2w.nii.gz
+#       masks:
+#         - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00982XX18_ses-55730_run-09_T2w/sub-CC00982XX18_ses-55730_run-09_T2w_mask.nii.gz
+#         - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00982XX18_ses-55730_run-10_T2w/sub-CC00982XX18_ses-55730_run-10_T2w_mask.nii.gz
+#         - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00982XX18_ses-55730_run-11_T2w/sub-CC00982XX18_ses-55730_run-11_T2w_mask.nii.gz
+#         - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00982XX18_ses-55730_run-12_T2w/sub-CC00982XX18_ses-55730_run-12_T2w_mask.nii.gz
+#         - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00982XX18_ses-55730_run-13_T2w/sub-CC00982XX18_ses-55730_run-13_T2w_mask.nii.gz
+#         - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC00982XX18_ses-55730_run-14_T2w/sub-CC00982XX18_ses-55730_run-14_T2w_mask.nii.gz
 
-  # Subject 4: sub-CC01160XX06 / ses-109530 (Runs 08-13)
-  sub-CC01160XX06:
-    ses-109530:
-      stacks:
-        - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC01160XX06/ses-109530/anat/sub-CC01160XX06_ses-109530_run-08_T2w.nii.gz
-        - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC01160XX06/ses-109530/anat/sub-CC01160XX06_ses-109530_run-09_T2w.nii.gz
-        - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC01160XX06/ses-109530/anat/sub-CC01160XX06_ses-109530_run-10_T2w.nii.gz
-        - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC01160XX06/ses-109530/anat/sub-CC01160XX06_ses-109530_run-11_T2w.nii.gz
-        - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC01160XX06/ses-109530/anat/sub-CC01160XX06_ses-109530_run-12_T2w.nii.gz
-        - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC01160XX06/ses-109530/anat/sub-CC01160XX06_ses-109530_run-13_T2w.nii.gz
-      masks:
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC01160XX06_ses-109530_run-08_T2w/sub-CC01160XX06_ses-109530_run-08_T2w_mask.nii.gz
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC01160XX06_ses-109530_run-09_T2w/sub-CC01160XX06_ses-109530_run-09_T2w_mask.nii.gz
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC01160XX06_ses-109530_run-10_T2w/sub-CC01160XX06_ses-109530_run-10_T2w_mask.nii.gz
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC01160XX06_ses-109530_run-11_T2w/sub-CC01160XX06_ses-109530_run-11_T2w_mask.nii.gz
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC01160XX06_ses-109530_run-12_T2w/sub-CC01160XX06_ses-109530_run-12_T2w_mask.nii.gz
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC01160XX06_ses-109530_run-13_T2w/sub-CC01160XX06_ses-109530_run-13_T2w_mask.nii.gz
+#   # Subject 4: sub-CC01160XX06 / ses-109530 (Runs 08-13)
+#   sub-CC01160XX06:
+#     ses-109530:
+#       stacks:
+#         - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC01160XX06/ses-109530/anat/sub-CC01160XX06_ses-109530_run-08_T2w.nii.gz
+#         - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC01160XX06/ses-109530/anat/sub-CC01160XX06_ses-109530_run-09_T2w.nii.gz
+#         - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC01160XX06/ses-109530/anat/sub-CC01160XX06_ses-109530_run-10_T2w.nii.gz
+#         - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC01160XX06/ses-109530/anat/sub-CC01160XX06_ses-109530_run-11_T2w.nii.gz
+#         - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC01160XX06/ses-109530/anat/sub-CC01160XX06_ses-109530_run-12_T2w.nii.gz
+#         - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC01160XX06/ses-109530/anat/sub-CC01160XX06_ses-109530_run-13_T2w.nii.gz
+#       masks:
+#         - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC01160XX06_ses-109530_run-08_T2w/sub-CC01160XX06_ses-109530_run-08_T2w_mask.nii.gz
+#         - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC01160XX06_ses-109530_run-09_T2w/sub-CC01160XX06_ses-109530_run-09_T2w_mask.nii.gz
+#         - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC01160XX06_ses-109530_run-10_T2w/sub-CC01160XX06_ses-109530_run-10_T2w_mask.nii.gz
+#         - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC01160XX06_ses-109530_run-11_T2w/sub-CC01160XX06_ses-109530_run-11_T2w_mask.nii.gz
+#         - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC01160XX06_ses-109530_run-12_T2w/sub-CC01160XX06_ses-109530_run-12_T2w_mask.nii.gz
+#         - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC01160XX06_ses-109530_run-13_T2w/sub-CC01160XX06_ses-109530_run-13_T2w_mask.nii.gz
 
   # Subject 5: sub-CC01170XX08 / ses-108031 (Runs 08-13)
   sub-CC01170XX08:
