@@ -164,6 +164,7 @@ def process_subject(subject_id, session_id, stacks, masks, output_root, args, al
         print(f"  [Debug] Mask shape: {mask.shape}, dtype: {mask.dtype}")
         print(f"  [Debug] Bounding Box shape: {bounding_box.shape}, dtype: {bounding_box.dtype}")
 
+
     output_volume, _ = _sample_inr(
             args,
             model_inr,
@@ -182,6 +183,9 @@ def process_subject(subject_id, session_id, stacks, masks, output_root, args, al
     output_volume.save(os.path.join(subject_out_dir, "reconstruction_with_bg.nii.gz"), masked=False) # without the mask
     # B. Restore the original Brain Mask for the masked output
     print("  [Info] Restoring original brain mask...")
+    if debug:
+        print(f"  [Debug] Output Volume shape: {output_volume.image.shape}, dtype: {output_volume.image.dtype}")
+        print(f"  [Debug] Mask shape: {mask.image.shape}, dtype: {mask.image.dtype}")
     
     # Simple assignment since shapes match
     output_volume.mask = mask.image
