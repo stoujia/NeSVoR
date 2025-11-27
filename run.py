@@ -237,7 +237,7 @@ def main():
     parser = ArgumentParser()
     parser.add_argument("--config", type=str, help="Path to YAML config file", default="subjects.yaml")
     parser.add_argument("--subject", type=str, required=True, help="Specific Subject ID to process")
-    parser.add_argument("--session", type=str, required=True, help="Specific Session ID to process")
+    parser.add_argument("--session", type=str, help="Specific Session ID to process")
     
     # Tuning
     parser.add_argument("--resolution", type=float, default=0.5)
@@ -351,9 +351,14 @@ def main():
     #     for ses_id, file_paths in sessions.items():
             
     try:
-        subj_data = config_data['subjects'][conf.subject][conf.session]
+        if conf.session is not None:
+           subj_data = config_data['subjects'][conf.subject][conf.session]
+           session_out_dir = os.path.join(root_out, conf.subject, conf.session)
+        else:
+           subj_data = config_data['subjects'][conf.subject]
+           session_out_dir = os.path.join(root_out, conf.subject)
         root_out = config_data['output_dir']
-        session_out_dir = os.path.join(root_out, conf.subject, conf.session)
+        
         # session_out_dir = os.path.join(root_output_dir, sub_id, ses_id)
         os.makedirs(session_out_dir, exist_ok=True)
         

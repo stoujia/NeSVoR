@@ -1,0 +1,115 @@
+# Global output folder (root)
+output_dir: "/envau/work/meca/users/jia.s/GaussianSplatting/NeSVoR_outputs_real"
+
+# Subject Dictionary
+
+subjects:
+  sub-CC00389XX19_ses-133800:
+    stacks:
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00389XX19_ses-133800/mu_un1/T2w/LrAxNifti_T2w_mu_un1.nii.gz
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00389XX19_ses-133800/mu_un1/T2w/LrCorNifti_T2w_mu_un1.nii.gz
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00389XX19_ses-133800/mu_un1/T2w/LrSagNifti_T2w_mu_un1.nii.gz
+    masks:
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00389XX19_ses-133800/mu_un1/T2w/LrAxNifti_T2w_mu_un1_mask.nii.gz
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00389XX19_ses-133800/mu_un1/T2w/LrCorNifti_T2w_mu_un1_mask.nii.gz
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00389XX19_ses-133800/mu_un1/T2w/LrSagNifti_T2w_mu_un1_mask.nii.gz
+    # age_weeks: 38.43
+
+  sub-CC00891XX18_ses-30630:
+    stacks:
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00891XX18_ses-30630/mu_un1/T2w/LrAxNifti_T2w_mu_un1.nii.gz
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00891XX18_ses-30630/mu_un1/T2w/LrCorNifti_T2w_mu_un1.nii.gz
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00891XX18_ses-30630/mu_un1/T2w/LrSagNifti_T2w_mu_un1.nii.gz
+    masks:
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00891XX18_ses-30630/mu_un1/T2w/LrAxNifti_T2w_mu_un1_mask.nii.gz
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00891XX18_ses-30630/mu_un1/T2w/LrCorNifti_T2w_mu_un1_mask.nii.gz
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00891XX18_ses-30630/mu_un1/T2w/LrSagNifti_T2w_mu_un1_mask.nii.gz
+    # age_weeks: 43.71
+
+  sub-CC00629XX19_ses-182000:
+    stacks:
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00629XX19_ses-182000/mu_un1/T2w/LrAxNifti_T2w_mu_un1.nii.gz
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00629XX19_ses-182000/mu_un1/T2w/LrCorNifti_T2w_mu_un1.nii.gz
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00629XX19_ses-182000/mu_un1/T2w/LrSagNifti_T2w_mu_un1.nii.gz
+    masks:
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00629XX19_ses-182000/mu_un1/T2w/LrAxNifti_T2w_mu_un1_mask.nii.gz
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00629XX19_ses-182000/mu_un1/T2w/LrCorNifti_T2w_mu_un1_mask.nii.gz
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00629XX19_ses-182000/mu_un1/T2w/LrSagNifti_T2w_mu_un1_mask.nii.gz
+    # age_weeks: 31.57
+
+  sub-CC00979XX23_ses-25330:
+    stacks:
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00979XX23_ses-25330/mu_un1/T2w/LrAxNifti_T2w_mu_un1.nii.gz
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00979XX23_ses-25330/mu_un1/T2w/LrCorNifti_T2w_mu_un1.nii.gz
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00979XX23_ses-25330/mu_un1/T2w/LrSagNifti_T2w_mu_un1.nii.gz
+    masks:
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00979XX23_ses-25330/mu_un1/T2w/LrAxNifti_T2w_mu_un1_mask.nii.gz
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00979XX23_ses-25330/mu_un1/T2w/LrCorNifti_T2w_mu_un1_mask.nii.gz
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00979XX23_ses-25330/mu_un1/T2w/LrSagNifti_T2w_mu_un1_mask.nii.gz
+    # age_weeks: 33
+
+  sub-CC00735XX18_ses-222201:
+    stacks:
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00735XX18_ses-222201/mu_un1/T2w/LrAxNifti_T2w_mu_un1.nii.gz
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00735XX18_ses-222201/mu_un1/T2w/LrCorNifti_T2w_mu_un1.nii.gz
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00735XX18_ses-222201/mu_un1/T2w/LrSagNifti_T2w_mu_un1.nii.gz
+    masks:
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00735XX18_ses-222201/mu_un1/T2w/LrAxNifti_T2w_mu_un1_mask.nii.gz
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00735XX18_ses-222201/mu_un1/T2w/LrCorNifti_T2w_mu_un1_mask.nii.gz
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00735XX18_ses-222201/mu_un1/T2w/LrSagNifti_T2w_mu_un1_mask.nii.gz
+    # age_weeks: 29.29
+
+  sub-CC01045XX15_ses-54630:
+    stacks:
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC01045XX15_ses-54630/mu_un1/T2w/LrAxNifti_T2w_mu_un1.nii.gz
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC01045XX15_ses-54630/mu_un1/T2w/LrCorNifti_T2w_mu_un1.nii.gz
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC01045XX15_ses-54630/mu_un1/T2w/LrSagNifti_T2w_mu_un1.nii.gz
+    masks:
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC01045XX15_ses-54630/mu_un1/T2w/LrAxNifti_T2w_mu_un1_mask.nii.gz
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC01045XX15_ses-54630/mu_un1/T2w/LrCorNifti_T2w_mu_un1_mask.nii.gz
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC01045XX15_ses-54630/mu_un1/T2w/LrSagNifti_T2w_mu_un1_mask.nii.gz
+    # age_weeks: 34
+
+  sub-CC00792XX18_ses-244200:
+    stacks:
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00792XX18_ses-244200/mu_un1/T2w/LrAxNifti_T2w_mu_un1.nii.gz
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00792XX18_ses-244200/mu_un1/T2w/LrCorNifti_T2w_mu_un1.nii.gz
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00792XX18_ses-244200/mu_un1/T2w/LrSagNifti_T2w_mu_un1.nii.gz
+    masks:
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00792XX18_ses-244200/mu_un1/T2w/LrAxNifti_T2w_mu_un1_mask.nii.gz
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00792XX18_ses-244200/mu_un1/T2w/LrCorNifti_T2w_mu_un1_mask.nii.gz
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC00792XX18_ses-244200/mu_un1/T2w/LrSagNifti_T2w_mu_un1_mask.nii.gz
+    # age_weeks: 35.43
+
+  sub-CC01208XX12_ses-149630:
+    stacks:
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC01208XX12_ses-149630/mu_un1/T2w/LrAxNifti_T2w_mu_un1.nii.gz
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC01208XX12_ses-149630/mu_un1/T2w/LrCorNifti_T2w_mu_un1.nii.gz
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC01208XX12_ses-149630/mu_un1/T2w/LrSagNifti_T2w_mu_un1.nii.gz
+    masks:
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC01208XX12_ses-149630/mu_un1/T2w/LrAxNifti_T2w_mu_un1_mask.nii.gz
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC01208XX12_ses-149630/mu_un1/T2w/LrCorNifti_T2w_mu_un1_mask.nii.gz
+      - /envau/work/meca/users/jia.s/GaussianSplatting/simulated/sub-CC01208XX12_ses-149630/mu_un1/T2w/LrSagNifti_T2w_mu_un1_mask.nii.gz
+    # age_weeks: 40.43
+
+  sub-CC00689XX22_ses207400:
+    stacks:
+      - /envau/work/meca/users/jia.s/multi_simulated2/sub-CC00689XX22_ses207400/mu_un1/T2w/LrAxNifti_T2w_mu_un1.nii.gz
+      - /envau/work/meca/users/jia.s/multi_simulated2/sub-CC00689XX22_ses207400/mu_un1/T2w/LrCorNifti_T2w_mu_un1.nii.gz
+      - /envau/work/meca/users/jia.s/multi_simulated2/sub-CC00689XX22_ses207400/mu_un1/T2w/LrSagNifti_T2w_mu_un1.nii.gz
+    masks:
+      - /envau/work/meca/users/jia.s/multi_simulated2/sub-CC00689XX22_ses207400/mu_un1/T2w/LrAxNifti_T2w_mu_un1_mask.nii.gz
+      - /envau/work/meca/users/jia.s/multi_simulated2/sub-CC00689XX22_ses207400/mu_un1/T2w/LrCorNifti_T2w_mu_un1_mask.nii.gz
+      - /envau/work/meca/users/jia.s/multi_simulated2/sub-CC00689XX22_ses207400/mu_un1/T2w/LrSagNifti_T2w_mu_un1_mask.nii.gz
+    # age_weeks: 
+
+  sub-CC00718XX17_ses-210400:
+    stacks:
+      - /envau/work/meca/users/jia.s/multi_simulated2/sub-CC00718XX17_ses-210400/mu_un1/T2w/LrAxNifti_T2w_mu_un1.nii.gz
+      - /envau/work/meca/users/jia.s/multi_simulated2/sub-CC00718XX17_ses-210400/mu_un1/T2w/LrCorNifti_T2w_mu_un1.nii.gz
+      - /envau/work/meca/users/jia.s/multi_simulated2/sub-CC00718XX17_ses-210400/mu_un1/T2w/LrSagNifti_T2w_mu_un1.nii.gz
+    masks:
+      - /envau/work/meca/users/jia.s/multi_simulated2/sub-CC00718XX17_ses-210400/mu_un1/T2w/LrAxNifti_T2w_mu_un1_mask.nii.gz
+      - /envau/work/meca/users/jia.s/multi_simulated2/sub-CC00718XX17_ses-210400/mu_un1/T2w/LrCorNifti_T2w_mu_un1_mask.nii.gz
+      - /envau/work/meca/users/jia.s/multi_simulated2/sub-CC00718XX17_ses-210400/mu_un1/T2w/LrSagNifti_T2w_mu_un1_mask.nii.gz
+    # age_weeks:
