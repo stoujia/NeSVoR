@@ -260,7 +260,7 @@ def main():
         gamma=0.33,
         milestones=[0.5, 0.75, 0.9],
         n_epochs=None,
-        batch_size=4096 * 2,                       # 1024 * 4
+        batch_size=4096 * 4,                       # 1024 * 4
         n_samples=256,                         # 128 * 2
         single_precision=False,                # action="store_true"
         
