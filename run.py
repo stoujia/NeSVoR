@@ -351,7 +351,7 @@ def main():
     #     for ses_id, file_paths in sessions.items():
             
     try:
-        if conf.session is not None:
+        if conf.session != "":
            subj_data = config_data['subjects'][conf.subject][conf.session]
            session_out_dir = os.path.join(root_out, conf.subject, conf.session)
         else:
