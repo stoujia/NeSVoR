@@ -2,7 +2,7 @@
 output_dir: "/envau/work/meca/users/jia.s/GaussianSplatting/NeSVoR_outputs_real"
 
 # Subject Dictionary
-# subjects:
+subjects:
 #   # Subject 1 (From your example)
 #   sub-CC00902XX11:
 #     ses-6831:
