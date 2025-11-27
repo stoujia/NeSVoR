@@ -162,6 +162,7 @@ def process_subject(subject_id, session_id, stacks, masks, output_root, args, al
     if debug:
         print("  [Debug] Sampling with debug mode ON.")
         print(f"  [Debug] Mask shape: {mask.shape}, dtype: {mask.dtype}")
+        print(f"  [Debug] Bounding Box shape: {bounding_box.shape}, dtype: {bounding_box.dtype}")
 
     output_volume, _ = _sample_inr(
             args,
@@ -229,7 +230,7 @@ def main():
     
     # Tuning
     parser.add_argument("--resolution", type=float, default=0.5)
-    parser.add_argument("--iterations", type=int, default=6000)
+    parser.add_argument("--iterations", type=int, default=100)
     parser.add_argument("--batch_size", type=int, default=4096 * 8)
 
     conf = parser.parse_args()
@@ -296,7 +297,7 @@ def main():
         milestones=[0.5, 0.75, 0.9],
         n_epochs=None,
         batch_size=conf.batch_size,                       # 1024 * 4
-        n_samples=128,                         # 128 * 2
+        n_samples=128,                         # 128 * 2 #PSF MonteCarlos
         single_precision=False,                # action="store_true"
         
         # *** COLLISION NOTE ***
