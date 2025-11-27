@@ -49,10 +49,12 @@ def preprocess_with_docker(sub_id, stacks, masks, output_dir_host):
     
     # Define where slices will be saved on the HOST
     slices_output_host = os.path.join(output_dir_host, "preproc_slices")
+
+    
     os.makedirs(slices_output_host, exist_ok=True)
     
     # Check if we already did this
-    if len(glob.glob(os.path.join(slices_output_host, "*.pt"))) > 0:
+    if len(glob.glob(os.path.join(slices_output_host, "*.nii.gz"))) > 0:
         print(f"  [Info] Slices found for {sub_id}, skipping Docker step.")
         return slices_output_host
 
