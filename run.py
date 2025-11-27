@@ -188,13 +188,20 @@ def process_subject(subject_id, session_id, stacks, masks, output_root, args, al
         print(f"  [Debug] Mask shape: {mask.image.shape}, dtype: {mask.image.dtype}")
     
     # Simple assignment since shapes match
-    output_volume.mask = mask.image
+    output_volume_masked = _sample_inr(
+            args,
+            model_inr,
+            mask,
+            None,
+            True,
+            False,
+        )
 
     # C. Save Masked (Now uses the brain mask)
-    output_volume.save(os.path.join(subject_out_dir, "reconstruction_masked.nii.gz"), masked=True) 
+    output_volume_masked.save(os.path.join(subject_out_dir, "reconstruction_masked.nii.gz"), masked=True) 
     
     # D. Save the mask itself
-    mask.save(os.path.join(subject_out_dir, "mask.nii.gz"))
+    output_volume_masked.save_mask(os.path.join(subject_out_dir, "mask.nii.gz"))
 
 
     # 6. Save Processing Metadata
