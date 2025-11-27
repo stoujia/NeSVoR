@@ -61,6 +61,9 @@ def preprocess_with_docker(sub_id, stacks, masks, output_dir_host):
     # 1. Convert Input Paths (Stacks/Masks) to /incoming/...
     docker_stacks = [path_to_docker_input(os.path.abspath(p)) for p in stacks]
     docker_masks = [path_to_docker_input(os.path.abspath(p)) for p in masks]
+
+    # Thickness for Docker (Strings)
+    thickness_args = ["2.2"] * len(docker_stacks)
     
     # 2. Handle Output Path
     # For output, we tell Docker to write to /outgoing/
@@ -83,7 +86,9 @@ def preprocess_with_docker(sub_id, stacks, masks, output_dir_host):
         "--input-stacks"
     ] + docker_stacks + [
         "--stack-masks"
-    ] + docker_masks
+    ] + docker_masks + [
+        "--thicknesses"
+    ] + thickness_args
 
     print(f"  [Docker] Running SVoRT registration for {sub_id}...")
     print("Command:", " ".join(cmd))
@@ -136,6 +141,19 @@ def process_subject(subject_id, session_id, stacks, masks, output_root, args, al
     training_duration = end_time - start_time
     print(f"Training Duration: {training_duration:.2f} seconds")
 
+    # ======================================================
+    # NEW BLOCK: Force Mask to be a Solid Bounding Box
+    # ======================================================
+    print("  [Info] Creating solid bounding box for sampling...")
+    
+    # 1. Clone the mask (copies geometry, transform, and data)
+    bounding_box = mask.clone()
+    
+    # 2. Fill the image data of the clone with 1s
+    # This creates a solid cube with the exact same spatial coordinates as the mask
+    bounding_box.image[:] = 1.0
+    # ======================================================
+
     # ---------------------------------------------------------
     # 4. Sample Volume (Local)
     # ---------------------------------------------------------
@@ -148,7 +166,7 @@ def process_subject(subject_id, session_id, stacks, masks, output_root, args, al
     output_volume, _ = _sample_inr(
             args,
             model_inr,
-            mask,
+            bounding_box,
             None,
             True,
             False,
@@ -158,10 +176,22 @@ def process_subject(subject_id, session_id, stacks, masks, output_root, args, al
     # 5. Save Outputs
     # ---------------------------------------------------------
     print("Step 5: Saving NIfTI files...")
-    output_volume.save(os.path.join(subject_out_dir, "reconstruction_masked.nii.gz"), masked=True) # with the mask
-    output_volume.save_mask(os.path.join(subject_out_dir, "mask.nii.gz"))
+    # A. Save Unmasked (With Background)
+
     output_volume.save(os.path.join(subject_out_dir, "reconstruction_with_bg.nii.gz"), masked=False) # without the mask
+    # B. Restore the original Brain Mask for the masked output
+    print("  [Info] Restoring original brain mask...")
     
+    # Simple assignment since shapes match
+    output_volume.mask = mask.image
+
+    # C. Save Masked (Now uses the brain mask)
+    output_volume.save(os.path.join(subject_out_dir, "reconstruction_masked.nii.gz"), masked=True) 
+    
+    # D. Save the mask itself
+    mask.save(os.path.join(subject_out_dir, "mask.nii.gz"))
+
+
     # 6. Save Processing Metadata
     print("Step 6: Saving Metadata...")
     metadata = {
@@ -200,7 +230,7 @@ def main():
     # Tuning
     parser.add_argument("--resolution", type=float, default=0.5)
     parser.add_argument("--iterations", type=int, default=6000)
-    parser.add_argument("--batch_size", type=int, default=4096 * 4)
+    parser.add_argument("--batch_size", type=int, default=4096 * 8)
 
     conf = parser.parse_args()
 
@@ -266,7 +296,7 @@ def main():
         milestones=[0.5, 0.75, 0.9],
         n_epochs=None,
         batch_size=conf.batch_size,                       # 1024 * 4
-        n_samples=256,                         # 128 * 2
+        n_samples=128,                         # 128 * 2
         single_precision=False,                # action="store_true"
         
         # *** COLLISION NOTE ***
