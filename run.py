@@ -198,7 +198,7 @@ def process_subject(subject_id, session_id, stacks, masks, output_root, args, al
         )
 
     # C. Save Masked (Now uses the brain mask)
-    output_volume_masked.save(os.path.join(subject_out_dir, "reconstruction_masked.nii.gz"), masked=True) 
+    output_volume_masked.save(os.path.join(subject_out_dir, "reconstruction_masked.nii.gz")) 
     
     # D. Save the mask itself
     output_volume_masked.save_mask(os.path.join(subject_out_dir, "mask.nii.gz"))
