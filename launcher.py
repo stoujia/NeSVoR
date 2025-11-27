@@ -38,7 +38,7 @@ def main():
                 sys.executable, "run.py",
                 "--config", config_path,
                 "--subject", sub_id,
-                "--session", None,
+                "--session", "",
                 # "--resolution", args.resolution,
                 # "--iterations", args.iterations
             ]
