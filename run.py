@@ -242,7 +242,7 @@ def main():
     # Tuning
     parser.add_argument("--resolution", type=float, default=0.5)
     parser.add_argument("--iterations", type=int, default=6000)
-    parser.add_argument("--batch_size", type=int, default=4096 * 8 * 2)
+    parser.add_argument("--batch_size", type=int, default=4096 * 8 )
 
     conf = parser.parse_args()
 
