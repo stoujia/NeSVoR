@@ -7,6 +7,7 @@ from types import SimpleNamespace
 import time
 import yaml
 import json
+import traceback
 
 
 # --- NeSVoR "Old Version" Imports ---
@@ -191,11 +192,13 @@ def process_subject(subject_id, session_id, stacks, masks, output_root, args, al
 def main():
     parser = ArgumentParser()
     parser.add_argument("--config", type=str, help="Path to YAML config file", default="subjects.yaml")
+    parser.add_argument("--subject", type=str, required=True, help="Specific Subject ID to process")
+    parser.add_argument("--session", type=str, required=True, help="Specific Session ID to process")
     
     # Tuning
     parser.add_argument("--resolution", type=float, default=0.5)
-    # parser.add_argument("--iterations", type=int, default=3000)
-    # parser.add_argument("--batch_size", type=int, default=1024)
+    parser.add_argument("--iterations", type=int, default=6000)
+    parser.add_argument("--batch_size", type=int, default=4096 * 4)
 
     conf = parser.parse_args()
 
@@ -260,7 +263,7 @@ def main():
         gamma=0.33,
         milestones=[0.5, 0.75, 0.9],
         n_epochs=None,
-        batch_size=4096 * 4,                       # 1024 * 4
+        batch_size=conf.batch_size,                       # 1024 * 4
         n_samples=256,                         # 128 * 2
         single_precision=False,                # action="store_true"
         
@@ -268,7 +271,7 @@ def main():
         # 'n_iter' is defined as 6000 in build_parser_training (for training steps)
         # but as 3 in build_parser_svr (for outer loop iterations).
         # Defaulting to 6000 for standard training compilation.
-        n_iter=6000, 
+        n_iter=conf.iterations,                           # 6000
 
         # --- Outputs Sampling ---
         output_resolution=0.5,
@@ -298,31 +301,47 @@ def main():
         debug=False                            # action="store_true"
     )
 
-    subjects_dict = config_data.get('subjects', {})
+    # subjects_dict = config_data.get('subjects', {})
     
-    for sub_id, sessions in subjects_dict.items():
-        for ses_id, file_paths in sessions.items():
+    # for sub_id, sessions in subjects_dict.items():
+    #     for ses_id, file_paths in sessions.items():
             
-            session_out_dir = os.path.join(root_output_dir, sub_id, ses_id)
-            os.makedirs(session_out_dir, exist_ok=True)
-            
-            stacks = file_paths.get('stacks', [])
-            masks = file_paths.get('masks', [])
+    try:
+        subj_data = config_data['subjects'][conf.subject][conf.session]
+        root_out = config_data['output_dir']
+        session_out_dir = os.path.join(root_out, conf.subject, conf.session)
+        # session_out_dir = os.path.join(root_output_dir, sub_id, ses_id)
+        os.makedirs(session_out_dir, exist_ok=True)
+        
+        stacks = subj_data['stacks']
+        masks = subj_data['masks']
+        # stacks = file_paths.get('stacks', [])
+        # masks = file_paths.get('masks', [])
 
-            if not stacks:
-                print(f"Skipping {sub_id}/{ses_id}: No stacks found in YAML.")
-                continue
-            
-            if len(stacks) != len(masks):
-                print(f"Mismatch: {sub_id}/{ses_id} has {len(stacks)} stacks and {len(masks)} masks.")
-                continue
+        process_subject(conf.subject, conf.session, stacks, masks, session_out_dir, args)
+        
+    except KeyError:
+        print(f"Error: Subject {conf.subject} or Session {conf.session} not found in YAML.")
+        exit(1)
+    except Exception as e:
+        print(f"CRITICAL FAILURE: {e}")
+        traceback.print_exc()
+        exit(1)
 
-            try:
-                # Updated call to include ses_id
-                process_subject(sub_id, ses_id, stacks, masks, session_out_dir, args, already_SVoRT=already_SVoRT)
-            except Exception as e:
-                print(f"FAILED on {sub_id}/{ses_id}: {e}")
-                import traceback
-                traceback.print_exc()
+        # if not stacks:
+        #     print(f"Skipping {sub_id}/{ses_id}: No stacks found in YAML.")
+        #     continue
+        
+        # if len(stacks) != len(masks):
+        #     print(f"Mismatch: {sub_id}/{ses_id} has {len(stacks)} stacks and {len(masks)} masks.")
+        #     continue
+
+        # try:
+        #     # Updated call to include ses_id
+        #     process_subject(sub_id, ses_id, stacks, masks, session_out_dir, args, already_SVoRT=already_SVoRT)
+        # except Exception as e:
+        #     print(f"FAILED on {sub_id}/{ses_id}: {e}")
+        #     import traceback
+        #     traceback.print_exc()
 if __name__ == "__main__":
     main()
