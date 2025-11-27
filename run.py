@@ -351,13 +351,14 @@ def main():
     #     for ses_id, file_paths in sessions.items():
             
     try:
+        root_out = config_data['output_dir']
         if conf.session != "":
            subj_data = config_data['subjects'][conf.subject][conf.session]
            session_out_dir = os.path.join(root_out, conf.subject, conf.session)
         else:
            subj_data = config_data['subjects'][conf.subject]
            session_out_dir = os.path.join(root_out, conf.subject)
-        root_out = config_data['output_dir']
+        
         
         # session_out_dir = os.path.join(root_output_dir, sub_id, ses_id)
         os.makedirs(session_out_dir, exist_ok=True)
