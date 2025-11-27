@@ -1,5 +1,5 @@
 # Global output folder (root)
-output_dir: "/envau/work/meca/users/jia.s/GaussianSplatting/NeSVoR_outputs"
+output_dir: "/envau/work/meca/users/jia.s/GaussianSplatting/NeSVoR_outputs_test"
 
 # Subject Dictionary
 subjects:
