@@ -24,6 +24,7 @@ def main():
     if "simu" in config_path:
         print("Using simulation configuration.")
         # 2. Loop through every Subject/Session
+        ses_id = None
         for sub_id, sub_info in data['subjects'].items():
         
             
