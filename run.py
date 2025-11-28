@@ -30,6 +30,7 @@ DOCKER_INPUT_MOUNT = "/incoming"
 # 2. The Docker Output Mount Point (Fixed internal path)
 DOCKER_OUTPUT_MOUNT = "/outgoing"
 already_SVoRT = False
+contrast = 'tru'  # Options: 'T2w_dhcp', 'T1w_dhcp', 'haste', 'tru'
 
 def path_to_docker_input(host_path):
     """
@@ -63,7 +64,17 @@ def preprocess_with_docker(sub_id, stacks, masks, output_dir_host):
     docker_masks = [path_to_docker_input(os.path.abspath(p)) for p in masks]
 
     # Thickness for Docker (Strings)
-    thickness_args = ["2.2"] * len(docker_stacks)
+    if contrast == 'T2w_dhcp':
+        thickness = "2.2"
+    elif contrast == 'T1w_dhcp':
+        thickness = "4.0"
+    elif contrast == 'haste':
+        thickness = "3.0"
+    elif contrast == 'tru':
+        thickness = "3.5"
+    else:
+        return f"  [Error] Unknown contrast type: {contrast}"
+    thickness_args = [thickness] * len(docker_stacks)
     
     # 2. Handle Output Path
     # For output, we tell Docker to write to /outgoing/
