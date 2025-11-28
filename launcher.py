@@ -12,7 +12,7 @@ def main():
     # args = parser.parse_args()
 
     # 1. Read the YAML to get the list of jobs
-    config_path = "subjects_simu.yaml"
+    config_path = "subjects.yaml"
 
     with open(config_path, 'r') as f:
         data = yaml.safe_load(f)
