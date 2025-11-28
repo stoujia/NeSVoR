@@ -1,8 +1,8 @@
 # Global output folder (root)
-output_dir: "/envau/work/meca/users/jia.s/GaussianSplatting/NeSVoR_outputs_real"
+output_dir: "/envau/work/meca/users/jia.s/GaussianSplatting/NeSVoR_outputs_real/MarsFet"
 
 # Subject Dictionary
-subjects:
+# subjects:
 #   # Subject 1 (From your example)
 #   sub-CC00902XX11:
 #     ses-6831:
@@ -75,20 +75,71 @@ subjects:
 #         - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC01160XX06_ses-109530_run-12_T2w/sub-CC01160XX06_ses-109530_run-12_T2w_mask.nii.gz
 #         - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC01160XX06_ses-109530_run-13_T2w/sub-CC01160XX06_ses-109530_run-13_T2w_mask.nii.gz
 
-  # Subject 5: sub-CC01170XX08 / ses-108031 (Runs 08-13)
-  sub-CC01170XX08:
-    ses-108031:
+#   # Subject 5: sub-CC01170XX08 / ses-108031 (Runs 08-13)
+#   sub-CC01170XX08:
+#     ses-108031:
+#       stacks:
+#         - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC01170XX08/ses-108031/anat/sub-CC01170XX08_ses-108031_run-08_T2w.nii.gz
+#         - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC01170XX08/ses-108031/anat/sub-CC01170XX08_ses-108031_run-09_T2w.nii.gz
+#         - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC01170XX08/ses-108031/anat/sub-CC01170XX08_ses-108031_run-10_T2w.nii.gz
+#         - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC01170XX08/ses-108031/anat/sub-CC01170XX08_ses-108031_run-11_T2w.nii.gz
+#         - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC01170XX08/ses-108031/anat/sub-CC01170XX08_ses-108031_run-12_T2w.nii.gz
+#         - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC01170XX08/ses-108031/anat/sub-CC01170XX08_ses-108031_run-13_T2w.nii.gz
+#       masks:
+#         - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC01170XX08_ses-108031_run-08_T2w/sub-CC01170XX08_ses-108031_run-08_T2w_mask.nii.gz
+#         - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC01170XX08_ses-108031_run-09_T2w/sub-CC01170XX08_ses-108031_run-09_T2w_mask.nii.gz
+#         - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC01170XX08_ses-108031_run-10_T2w/sub-CC01170XX08_ses-108031_run-10_T2w_mask.nii.gz
+#         - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC01170XX08_ses-108031_run-11_T2w/sub-CC01170XX08_ses-108031_run-11_T2w_mask.nii.gz
+#         - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC01170XX08_ses-108031_run-12_T2w/sub-CC01170XX08_ses-108031_run-12_T2w_mask.nii.gz
+#         - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC01170XX08_ses-108031_run-13_T2w/sub-CC01170XX08_ses-108031_run-13_T2w_mask.nii.gz
+
+# MarsFet Dataset
+subjects:
+  sub-0019:
+    ses-0022:
       stacks:
-        - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC01170XX08/ses-108031/anat/sub-CC01170XX08_ses-108031_run-08_T2w.nii.gz
-        - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC01170XX08/ses-108031/anat/sub-CC01170XX08_ses-108031_run-09_T2w.nii.gz
-        - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC01170XX08/ses-108031/anat/sub-CC01170XX08_ses-108031_run-10_T2w.nii.gz
-        - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC01170XX08/ses-108031/anat/sub-CC01170XX08_ses-108031_run-11_T2w.nii.gz
-        - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC01170XX08/ses-108031/anat/sub-CC01170XX08_ses-108031_run-12_T2w.nii.gz
-        - /envau/work/meca/data/Fetus/datasets/dhcp_fetal_bids/rawdata/sub-CC01170XX08/ses-108031/anat/sub-CC01170XX08_ses-108031_run-13_T2w.nii.gz
+        - /envau/work/meca/data/Fetus/datasets/MarsFet/derivatives/preprocessing/sub-0019/ses-0022/anat/sub-0019_ses-0022_acq-tru-run-1_desc-debiased_T2w.nii.gz
+        - /envau/work/meca/data/Fetus/datasets/MarsFet/derivatives/preprocessing/sub-0019/ses-0022/anat/sub-0019_ses-0022_acq-tru-run-2_desc-debiased_T2w.nii.gz
+        - /envau/work/meca/data/Fetus/datasets/MarsFet/derivatives/preprocessing/sub-0019/ses-0022/anat/sub-0019_ses-0022_acq-tru-run-3_desc-debiased_T2w.nii.gz
       masks:
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC01170XX08_ses-108031_run-08_T2w/sub-CC01170XX08_ses-108031_run-08_T2w_mask.nii.gz
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC01170XX08_ses-108031_run-09_T2w/sub-CC01170XX08_ses-108031_run-09_T2w_mask.nii.gz
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC01170XX08_ses-108031_run-10_T2w/sub-CC01170XX08_ses-108031_run-10_T2w_mask.nii.gz
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC01170XX08_ses-108031_run-11_T2w/sub-CC01170XX08_ses-108031_run-11_T2w_mask.nii.gz
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC01170XX08_ses-108031_run-12_T2w/sub-CC01170XX08_ses-108031_run-12_T2w_mask.nii.gz
-        - /envau/work/meca/users/jia.s/GaussianSplatting/masks_steven/sub-CC01170XX08_ses-108031_run-13_T2w/sub-CC01170XX08_ses-108031_run-13_T2w_mask.nii.gz
+        - /envau/work/meca/data/Fetus/datasets/MarsFet/derivatives/preprocessing/sub-0019/ses-0022/anat/sub-0019_ses-0022_acq-tru-run-1_desc-brainmask_T2w.nii.gz
+        - /envau/work/meca/data/Fetus/datasets/MarsFet/derivatives/preprocessing/sub-0019/ses-0022/anat/sub-0019_ses-0022_acq-tru-run-2_desc-brainmask_T2w.nii.gz
+        - /envau/work/meca/data/Fetus/datasets/MarsFet/derivatives/preprocessing/sub-0019/ses-0022/anat/sub-0019_ses-0022_acq-tru-run-3_desc-brainmask_T2w.nii.gz
+
+  sub-0614:
+    ses-0731:
+      stacks:
+        - /envau/work/meca/data/Fetus/datasets/MarsFet/derivatives/preprocessing/sub-0614/ses-0731/anat/sub-0614_ses-0731_acq-tru-run-1_desc-debiased_T2w.nii.gz
+        - /envau/work/meca/data/Fetus/datasets/MarsFet/derivatives/preprocessing/sub-0614/ses-0731/anat/sub-0614_ses-0731_acq-tru-run-2_desc-debiased_T2w.nii.gz
+        - /envau/work/meca/data/Fetus/datasets/MarsFet/derivatives/preprocessing/sub-0614/ses-0731/anat/sub-0614_ses-0731_acq-tru-run-3_desc-debiased_T2w.nii.gz
+        - /envau/work/meca/data/Fetus/datasets/MarsFet/derivatives/preprocessing/sub-0614/ses-0731/anat/sub-0614_ses-0731_acq-tru-run-4_desc-debiased_T2w.nii.gz
+      masks:
+        - /envau/work/meca/data/Fetus/datasets/MarsFet/derivatives/preprocessing/sub-0614/ses-0731/anat/sub-0614_ses-0731_acq-tru-run-1_desc-brainmask_T2w.nii.gz
+        - /envau/work/meca/data/Fetus/datasets/MarsFet/derivatives/preprocessing/sub-0614/ses-0731/anat/sub-0614_ses-0731_acq-tru-run-2_desc-brainmask_T2w.nii.gz
+        - /envau/work/meca/data/Fetus/datasets/MarsFet/derivatives/preprocessing/sub-0614/ses-0731/anat/sub-0614_ses-0731_acq-tru-run-3_desc-brainmask_T2w.nii.gz
+        - /envau/work/meca/data/Fetus/datasets/MarsFet/derivatives/preprocessing/sub-0614/ses-0731/anat/sub-0614_ses-0731_acq-tru-run-4_desc-brainmask_T2w.nii.gz
+  
+  sub-0649:
+    ses-0775:
+      stacks: # there are 10 stacks
+        - /envau/work/meca/data/Fetus/datasets/MarsFet/derivatives/preprocessing/sub-0649/ses-0775/anat/sub-0649_ses-0775_acq-tru-run-1_desc-debiased_T2w.nii.gz
+        - /envau/work/meca/data/Fetus/datasets/MarsFet/derivatives/preprocessing/sub-0649/ses-0775/anat/sub-0649_ses-0775_acq-tru-run-2_desc-debiased_T2w.nii.gz
+        - /envau/work/meca/data/Fetus/datasets/MarsFet/derivatives/preprocessing/sub-0649/ses-0775/anat/sub-0649_ses-0775_acq-tru-run-3_desc-debiased_T2w.nii.gz
+        - /envau/work/meca/data/Fetus/datasets/MarsFet/derivatives/preprocessing/sub-0649/ses-0775/anat/sub-0649_ses-0775_acq-tru-run-4_desc-debiased_T2w.nii.gz
+        - /envau/work/meca/data/Fetus/datasets/MarsFet/derivatives/preprocessing/sub-0649/ses-0775/anat/sub-0649_ses-0775_acq-tru-run-5_desc-debiased_T2w.nii.gz
+        - /envau/work/meca/data/Fetus/datasets/MarsFet/derivatives/preprocessing/sub-0649/ses-0775/anat/sub-0649_ses-0775_acq-tru-run-6_desc-debiased_T2w.nii.gz
+        - /envau/work/meca/data/Fetus/datasets/MarsFet/derivatives/preprocessing/sub-0649/ses-0775/anat/sub-0649_ses-0775_acq-tru-run-7_desc-debiased_T2w.nii.gz
+        - /envau/work/meca/data/Fetus/datasets/MarsFet/derivatives/preprocessing/sub-0649/ses-0775/anat/sub-0649_ses-0775_acq-tru-run-8_desc-debiased_T2w.nii.gz
+        - /envau/work/meca/data/Fetus/datasets/MarsFet/derivatives/preprocessing/sub-0649/ses-0775/anat/sub-0649_ses-0775_acq-tru-run-9_desc-debiased_T2w.nii.gz
+        - /envau/work/meca/data/Fetus/datasets/MarsFet/derivatives/preprocessing/sub-0649/ses-0775/anat/sub-0649_ses-0775_acq-tru-run-10_desc-debiased_T2w.nii.gz
+      masks:
+        - /envau/work/meca/data/Fetus/datasets/MarsFet/derivatives/preprocessing/sub-0649/ses-0775/anat/sub-0649_ses-0775_acq-tru-run-1_desc-brainmask_T2w.nii.gz
+        - /envau/work/meca/data/Fetus/datasets/MarsFet/derivatives/preprocessing/sub-0649/ses-0775/anat/sub-0649_ses-0775_acq-tru-run-2_desc-brainmask_T2w.nii.gz
+        - /envau/work/meca/data/Fetus/datasets/MarsFet/derivatives/preprocessing/sub-0649/ses-0775/anat/sub-0649_ses-0775_acq-tru-run-3_desc-brainmask_T2w.nii.gz
+        - /envau/work/meca/data/Fetus/datasets/MarsFet/derivatives/preprocessing/sub-0649/ses-0775/anat/sub-0649_ses-0775_acq-tru-run-4_desc-brainmask_T2w.nii.gz
+        - /envau/work/meca/data/Fetus/datasets/MarsFet/derivatives/preprocessing/sub-0649/ses-0775/anat/sub-0649_ses-0775_acq-tru-run-5_desc-brainmask_T2w.nii.gz
+        - /envau/work/meca/data/Fetus/datasets/MarsFet/derivatives/preprocessing/sub-0649/ses-0775/anat/sub-0649_ses-0775_acq-tru-run-6_desc-brainmask_T2w.nii.gz
+        - /envau/work/meca/data/Fetus/datasets/MarsFet/derivatives/preprocessing/sub-0649/ses-0775/anat/sub-0649_ses-0775_acq-tru-run-7_desc-brainmask_T2w.nii.gz
+        - /envau/work/meca/data/Fetus/datasets/MarsFet/derivatives/preprocessing/sub-0649/ses-0775/anat/sub-0649_ses-0775_acq-tru-run-8_desc-brainmask_T2w.nii.gz
+        - /envau/work/meca/data/Fetus/datasets/MarsFet/derivatives/preprocessing/sub-0649/ses-0775/anat/sub-0649_ses-0775_acq-tru-run-9_desc-brainmask_T2w.nii.gz
+        - /envau/work/meca/data/Fetus/datasets/MarsFet/derivatives/preprocessing/sub-0649/ses-0775/anat/sub-0649_ses-0775_acq-tru-run-10_desc-brainmask_T2w.nii.gz
