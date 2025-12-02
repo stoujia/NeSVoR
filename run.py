@@ -114,6 +114,10 @@ def preprocess_with_docker(sub_id, stacks, masks, output_dir_host):
 def process_subject(subject_id, session_id, stacks, masks, output_root, args, already_SVoRT = False, debug = True):
     print(f"--- Processing Subject: {subject_id} ---")
     
+    output_recon = '/home/INT/jia.s/Documents/NeSVoR_output/' #Bug in mounting fodler
+    sub_output_recon = os.path.join(output_recon, subject_id)
+    os.makedirs(sub_output_recon, exist_ok=True)
+
     # Prepare Subject Output Directory
     subject_out_dir = os.path.join(output_root, subject_id)
     os.makedirs(subject_out_dir, exist_ok=True)
@@ -129,116 +133,116 @@ def process_subject(subject_id, session_id, stacks, masks, output_root, args, al
     else:
         slices_dir = preprocess_with_docker(subject_id, stacks, masks, subject_out_dir)
 
-    # # ---------------------------------------------------------
-    # # 2. Load Slices (Local)
-    # # ---------------------------------------------------------
-    # print("Step 2: Loading slices locally...")
-    # slices = load_slices(slices_dir, device=args.device)
+    # ---------------------------------------------------------
+    # 2. Load Slices (Local)
+    # ---------------------------------------------------------
+    print("Step 2: Loading slices locally...")
+    slices = load_slices(slices_dir, device=args.device)
 
-    # # ---------------------------------------------------------
-    # # 3. Train NeSVoR Model (Local)
-    # # ---------------------------------------------------------
-    # print("Step 3: Training NeSVoR model...")
+    # ---------------------------------------------------------
+    # 3. Train NeSVoR Model (Local)
+    # ---------------------------------------------------------
+    print("Step 3: Training NeSVoR model...")
 
-    # start_time = time.time()  # <--- Start Timer
+    start_time = time.time()  # <--- Start Timer
 
-    # # # To get the boundin box
-    # # dataset = PointDataset(slices)
-    # # bb = dataset.bounding_box
+    # # To get the boundin box
+    # dataset = PointDataset(slices)
+    # bb = dataset.bounding_box
 
-    # model_inr, output_slices, mask = train(slices, args) #model.inr as an output
+    model_inr, output_slices, mask = train(slices, args) #model.inr as an output
 
-    # end_time = time.time()    # <--- End Timer
-    # training_duration = end_time - start_time
-    # print(f"Training Duration: {training_duration:.2f} seconds")
+    end_time = time.time()    # <--- End Timer
+    training_duration = end_time - start_time
+    print(f"Training Duration: {training_duration:.2f} seconds")
 
-    # # ======================================================
-    # # NEW BLOCK: Force Mask to be a Solid Bounding Box
-    # # ======================================================
-    # print("  [Info] Creating solid bounding box for sampling...")
+    # ======================================================
+    # NEW BLOCK: Force Mask to be a Solid Bounding Box
+    # ======================================================
+    print("  [Info] Creating solid bounding box for sampling...")
     
-    # # 1. Clone the mask (copies geometry, transform, and data)
-    # bounding_box = mask.clone()
+    # 1. Clone the mask (copies geometry, transform, and data)
+    bounding_box = mask.clone()
     
-    # # 2. Fill the image data of the clone with 1s
-    # # This creates a solid cube with the exact same spatial coordinates as the mask
-    # bounding_box.image[:] = 1.0
-    # # ======================================================
+    # 2. Fill the image data of the clone with 1s
+    # This creates a solid cube with the exact same spatial coordinates as the mask
+    bounding_box.image[:] = 1.0
+    # ======================================================
 
-    # # ---------------------------------------------------------
-    # # 4. Sample Volume (Local)
-    # # ---------------------------------------------------------
-    # print("Step 4: Sampling volumes...")
-    # # volume = sample_volume(model_inr, mask, psf_resolution=args.output_resolution)
-    # if debug:
-    #     print("  [Debug] Sampling with debug mode ON.")
-    #     print(f"  [Debug] Mask shape: {mask.shape}, dtype: {mask.dtype}")
-    #     print(f"  [Debug] Bounding Box shape: {bounding_box.shape}, dtype: {bounding_box.dtype}")
+    # ---------------------------------------------------------
+    # 4. Sample Volume (Local)
+    # ---------------------------------------------------------
+    print("Step 4: Sampling volumes...")
+    # volume = sample_volume(model_inr, mask, psf_resolution=args.output_resolution)
+    if debug:
+        print("  [Debug] Sampling with debug mode ON.")
+        print(f"  [Debug] Mask shape: {mask.shape}, dtype: {mask.dtype}")
+        print(f"  [Debug] Bounding Box shape: {bounding_box.shape}, dtype: {bounding_box.dtype}")
 
 
-    # output_volume, _ = _sample_inr(
-    #         args,
-    #         model_inr,
-    #         bounding_box,
-    #         None,
-    #         True,
-    #         False,
-    #     )
+    output_volume, _ = _sample_inr(
+            args,
+            model_inr,
+            bounding_box,
+            None,
+            True,
+            False,
+        )
 
-    # # ---------------------------------------------------------
-    # # 5. Save Outputs
-    # # ---------------------------------------------------------
-    # print("Step 5: Saving NIfTI files...")
-    # # A. Save Unmasked (With Background)
+    # ---------------------------------------------------------
+    # 5. Save Outputs
+    # ---------------------------------------------------------
+    print("Step 5: Saving NIfTI files...")
+    # A. Save Unmasked (With Background)
 
-    # output_volume.save(os.path.join(subject_out_dir, "reconstruction_with_bg.nii.gz"), masked=False) # without the mask
-    # # B. Restore the original Brain Mask for the masked output
-    # print("  [Info] Restoring original brain mask...")
-    # if debug:
-    #     print(f"  [Debug] Output Volume shape: {output_volume.image.shape}, dtype: {output_volume.image.dtype}")
-    #     print(f"  [Debug] Mask shape: {mask.image.shape}, dtype: {mask.image.dtype}")
+    output_volume.save(os.path.join(sub_output_recon, "reconstruction_with_bg.nii.gz"), masked=False) # without the mask
+    # B. Restore the original Brain Mask for the masked output
+    print("  [Info] Restoring original brain mask...")
+    if debug:
+        print(f"  [Debug] Output Volume shape: {output_volume.image.shape}, dtype: {output_volume.image.dtype}")
+        print(f"  [Debug] Mask shape: {mask.image.shape}, dtype: {mask.image.dtype}")
     
-    # # Simple assignment since shapes match
-    # output_volume_masked, _ = _sample_inr(
-    #         args,
-    #         model_inr,
-    #         mask,
-    #         None,
-    #         True,
-    #         False,
-    #     )
+    # Simple assignment since shapes match
+    output_volume_masked, _ = _sample_inr(
+            args,
+            model_inr,
+            mask,
+            None,
+            True,
+            False,
+        )
 
-    # # C. Save Masked (Now uses the brain mask)
-    # output_volume_masked.save(os.path.join(subject_out_dir, "reconstruction_masked.nii.gz"), masked=True) 
+    # C. Save Masked (Now uses the brain mask)
+    output_volume_masked.save(os.path.join(sub_output_recon, "reconstruction_masked.nii.gz"), masked=True) 
     
-    # # D. Save the mask itself
-    # output_volume_masked.save_mask(os.path.join(subject_out_dir, "mask.nii.gz"))
+    # D. Save the mask itself
+    output_volume_masked.save_mask(os.path.join(sub_output_recon, "mask.nii.gz"))
 
 
-    # # 6. Save Processing Metadata
-    # print("Step 6: Saving Metadata...")
-    # metadata = {
-    #     "subject_id": subject_id,
-    #     "session_id": session_id,
-    #     "training_time_seconds": round(training_duration, 2),
-    #     "training_time_human": time.strftime("%H:%M:%S", time.gmtime(training_duration)),
-    #     "parameters": {
-    #         "resolution": args.output_resolution,
-    #         "iterations": args.n_iter,
-    #         "batch_size": args.batch_size
-    #     },
-    #     "inputs": {
-    #         "stacks": stacks,
-    #         "masks": masks
-    #     }
-    # }
+    # 6. Save Processing Metadata
+    print("Step 6: Saving Metadata...")
+    metadata = {
+        "subject_id": subject_id,
+        "session_id": session_id,
+        "training_time_seconds": round(training_duration, 2),
+        "training_time_human": time.strftime("%H:%M:%S", time.gmtime(training_duration)),
+        "parameters": {
+            "resolution": args.output_resolution,
+            "iterations": args.n_iter,
+            "batch_size": args.batch_size
+        },
+        "inputs": {
+            "stacks": stacks,
+            "masks": masks
+        }
+    }
 
-    # # Save to JSON in the output folder
-    # json_path = os.path.join(subject_out_dir, "processing_info.json")
-    # with open(json_path, 'w') as f:
-    #     json.dump(metadata, f, indent=4)
+    # Save to JSON in the output folder
+    json_path = os.path.join(sub_output_recon, "processing_info.json")
+    with open(json_path, 'w') as f:
+        json.dump(metadata, f, indent=4)
 
-    # print(f"Done with {subject_id}. Info saved to {json_path}")
+    print(f"Done with {subject_id}. Info saved to {json_path}")
 
 
 
